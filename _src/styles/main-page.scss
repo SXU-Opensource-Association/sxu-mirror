@@ -1,0 +1,29 @@
+@use "./bootstrap_vars.scss" as bs;
+
+#mirrors {
+  #download-link {
+    margin-bottom: 1em;
+  }
+}
+
+.index-issue {
+  #footerwrap {
+    background: transparent;
+  }
+  body {
+    background-color: black;
+    color: bs.$body-color-dark;
+    --bs-emphasis-color-rgb: white;
+    --bs-link-color: #{bs.$link-color-dark};
+    --bs-link-color-hover: #{bs.$link-hover-color-dark};
+    --bs-link-color-rgb: #{bs.to-rgb(bs.$link-color-dark)};
+    --bs-link-color-hover-rgb: #{bs.to-rgb(bs.$link-hover-color-dark)};
+  }
+}
+
+#upgrade-mask {
+  color: black;
+  p {
+    color: inherit;
+  }
+}
