@@ -1,0 +1,112 @@
+.nav-tabs[data-v-8755a5bf] {
+  margin-bottom: 0.5em;
+}
+input[type="search"][data-v-260108a9] {
+  line-height: 18px;
+  padding: 8px;
+  border: 1px solid #e3e3e3;
+  max-width: 240px;
+  height: 30px;
+  font-size: 16px;
+  background: transparent;
+}
+/*
+ *  Usage:
+ *
+      <div class="sk-wave">
+        <div class="sk-rect sk-rect1"></div>
+        <div class="sk-rect sk-rect2"></div>
+        <div class="sk-rect sk-rect3"></div>
+        <div class="sk-rect sk-rect4"></div>
+        <div class="sk-rect sk-rect5"></div>
+      </div>
+ *
+ */
+.sk-wave[data-v-10cb6052] {
+  margin: 40px auto;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
+}
+.sk-wave .sk-rect[data-v-10cb6052] {
+  background-color: #333;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  animation: sk-waveStretchDelay-10cb6052 1.2s infinite ease-in-out;
+}
+@media (prefers-color-scheme: dark) {
+.sk-wave .sk-rect[data-v-10cb6052] {
+    background-color: rgba(222, 226, 230, 0.75);
+}
+}
+.sk-wave .sk-rect[data-v-10cb6052]:not(:last-child) {
+  margin-right: 0.3em;
+}
+.sk-wave .sk-rect1[data-v-10cb6052] {
+  animation-delay: -1.2s;
+}
+.sk-wave .sk-rect2[data-v-10cb6052] {
+  animation-delay: -1.1s;
+}
+.sk-wave .sk-rect3[data-v-10cb6052] {
+  animation-delay: -1s;
+}
+.sk-wave .sk-rect4[data-v-10cb6052] {
+  animation-delay: -0.9s;
+}
+.sk-wave .sk-rect5[data-v-10cb6052] {
+  animation-delay: -0.8s;
+}
+@keyframes sk-waveStretchDelay-10cb6052 {
+0%, 40%, 100% {
+    transform: scaleY(0.4);
+}
+20% {
+    transform: scaleY(1);
+}
+}
+.status-fail[data-v-10cb6052],
+.status-failed[data-v-10cb6052],
+.status-paused[data-v-10cb6052] {
+  --bs-table-bg: #fff4e3;
+  --bs-table-hover-bg: var(--bs-table-bg);
+}
+@media (prefers-color-scheme: dark) {
+.status-fail[data-v-10cb6052],
+  .status-failed[data-v-10cb6052],
+  .status-paused[data-v-10cb6052] {
+    --bs-table-bg: #524841;
+}
+}
+.status-syncing[data-v-10cb6052] {
+  --bs-table-bg: #e3fffd;
+  --bs-table-hover-bg: var(--bs-table-bg);
+}
+@media (prefers-color-scheme: dark) {
+.status-syncing[data-v-10cb6052] {
+    --bs-table-bg: #254059;
+}
+}
+.badge.badge-new[data-v-10cb6052] {
+  padding: 0.1em 0.2em;
+  vertical-align: 40%;
+  text-shadow: 1px 1px #888;
+  margin-right: 4px;
+  background-color: #3aa0e6;
+}
+a.mirror-item-label[data-v-10cb6052]::after {
+  content: " ";
+}
+tbody[data-v-10cb6052] {
+  font-size: 12pt;
+}
+tbody td[data-v-10cb6052] {
+  padding: 4px 8px;
+  border-style: none;
+}
+#mirror-title[data-v-10cb6052] {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
