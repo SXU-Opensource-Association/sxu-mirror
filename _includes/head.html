@@ -1,0 +1,129 @@
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% capture page_desc %}{% if include.metaDesc %}{{ include.metaDesc }} | {% if include.cattitle %}{{ include.cattitle }} | {% endif %}{% endif %}{{ site.title }}，{{ site.desc }}{% endcapture %}
+{% capture page_title %}{% if page.mirrorid %} {{ page.mirrorid }} |{% elsif page.title %} {{ page.title }} |{% endif %}{% if include.cattitle %} {{ include.cattitle }} |{% endif %}{% if (page.title or include.cattitle) %}{{" "}}{% endif %}{{ site.title }}{% if site.brand %} | {{ site.brand }}{% endif %}{% endcapture %}
+
+<meta name="description" content="{{ page_desc }}">
+<meta name="keywords" content="镜像站,镜像源,Linux,软件源,开源">
+<meta name="author" content="{{ site.author }}">
+<link rel="shortcut icon" href="/static/img/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="镜像站新闻" href="/feed.xml">
+
+<!-- Open Graph metadata -->
+<meta property="og:title" content="{{ page_title }}" />
+<meta property="og:description" content="{{ page_desc  }}" />
+<meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/static/img/logoo" /> <!-- WeChat requires that thumbnail image is larger than 300x300 -->
+<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
+<meta property="og:locale" content="zh_CN" />
+{% if include.notArticle %}
+<meta property="og:type" content="website" />
+{% else %}
+<meta property="og:type" content="article" />
+{% if page.date %}
+<meta property="article:published_time" content="{{page.date | date_to_xmlschema}}"/>
+{% endif %}
+<meta property="article:author" content="{{ site.author }}"/>
+{% endif %}
+
+<title>{{ page_title }}</title>
+{% unless include.nostyle %}
+{% include vite_script.html %}
+<link rel="stylesheet" id="style-polyfill-bs3" title="style-polyfill-bs3" href="{% vite_asset_path bs3-polyfill.scss %}" media="screen" integrity="sha256-OnlyforlegacybrowsersAAAAAAAAAAAAAAAAAAAAAA=" />
+<script>
+  (function(){
+    var s = document.getElementById('style-polyfill-bs3');
+    if(s){
+      /*
+       We first test if the browser supports CSS variables. If it does, we
+        remove the style tag. If it doesn't, or it dosn't support the
+        CSS.supports at all, then ....
+      */
+      try {
+        if(!CSS.supports('color', 'var(--fake-var)')){
+          throw false;
+        }
+        s.disabled = true;
+        s.parentNode.removeChild(s);
+      }catch(e){
+        /*
+          We detect if the polyfill css is loaded. It will not be loaded
+            if the browser supports content integrity.
+        */
+        var found = 0;
+        for(var i = 0; i < document.styleSheets.length; i++){
+          if(document.styleSheets[i].title === s.title){
+            found = 1;
+            break;
+          }
+        }
+        if(!found){
+          var s2 = s.cloneNode();
+          s2.integrity = "";
+          document.head.appendChild(s2);
+        }
+      }
+      /*
+        So the cases are:
+        - Old browsers that cannot run the script before:
+          - They will not support content integrity and will load the
+            polyfill css.
+        - Old browsers that can run the script before, but do not support
+          content integrity:
+          - They will load the polyfill css. and the script before do nothing
+        - Old browsers that support content integrity but do not support
+          CSS variables:
+          - The before script will load the polyfill css.
+        - Modern browers with script disabled:
+          - Content integrity will prevent them from loading the polyfill.
+      */
+    }
+  })();
+</script>
+{% if page.legacy %}
+<style>
+.container {
+	width: 85%;
+}
+.container > .navbar-header {
+	margin-right: 0;
+	margin-left: 0;
+}
+.navbar-nav {
+	float: left;
+	margin: 0;
+}
+.navbar-nav > li {
+	float: left;
+}
+.navbar-nav > li > a {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.navbar-nav.navbar-right:last-child {
+	margin-right: -15px;
+}
+.navbar-left {
+	float: left !important;
+}
+.navbar-right {
+	float: right !important;
+}
+.navbar-header:after {
+	clear: none;
+}
+a.navbar-brand {
+	width: 20em;
+}
+<!--[if lte IE 7]>
+.col-xs-1,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,
+.col-xs-10,.col-xs-11,.col-xs-12 {
+	padding: 0px;
+}
+<![endif]-->
+</style>
+{% endif %}
+{% endunless %}
+</head>

@@ -1,0 +1,94 @@
+---
+category: help
+layout: helpz
+mirrorid: "rpmfusion"
+excerpt_separator: ""
+---
+
+<!-- 本页面从 tuna/mirrorz-help-ng 自动生成，如需修改请参阅该仓库 -->
+{% raw %}<h1>RPMFusion 软件仓库</h1>{% endraw %}
+<div class="z-wrap">
+    <form class="z-form z-global">
+        <div>
+            <label for="e0a5cecb">线路选择</label>
+            <select id="e0a5cecb" name="host">
+                <option selected="selected" value="{{ site.url }}">自动</option>
+                <option value="{{ site.urlv4 }}">IPv4</option>
+                <option value="{{ site.urlv6 }}">IPv6</option>
+            </select>
+        </div>
+        <div>
+            <input id="a44d763c" name="_scheme" type="checkbox" checked>
+            <label for="a44d763c">是否使用 HTTPS</label>
+        </div>
+        <div>
+            <input id="a659e7da" name="_sudo" type="checkbox">
+            <label for="a659e7da">是否使用 sudo</label>
+        </div>
+    </form>
+</div>
+{% raw %}
+<div class="z-help">
+<h3>安装基础包</h3>
+<p>首先安装提供基础配置文件和 GPG 密钥的 <code>rpmfusion-*.rpm</code>。</p>
+<h4>Fedora 用户</h4>
+<div class="z-wrap"><form class="z-form" onsubmit="return false"></form><pre class="z-code"></pre></div><pre class="z-tmpl" z-lang="bash">
+{{sudo}}yum install --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+</pre>
+<p>或者如下直接用镜像中的 rpm 包：</p>
+<div class="z-wrap"><form class="z-form" onsubmit="return false"></form><pre class="z-code"></pre></div><pre class="z-tmpl" z-lang="bash">
+{{sudo}}yum install --nogpgcheck {{endpoint}}/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm {{endpoint}}/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+</pre>
+<h4>CentOS/RHEL 用户</h4>
+<div class="z-wrap"><form class="z-form" onsubmit="return false"><div><label for="sGdHHizh" title="">发行版</label><select id="sGdHHizh" name="release" title=""><option value="8">CentOS/RHEL 8</option><option value="9">CentOS/RHEL 9</option></select></div></form><pre class="z-code"></pre></div><pre class="z-tmpl" z-input="release" z-lang="bash">
+{{sudo}}yum localinstall --nogpgcheck {{endpoint}}/free/el/rpmfusion-free-release-{{release}}.noarch.rpm {{endpoint}}/nonfree/el/rpmfusion-nonfree-release-{{release}}.noarch.rpm
+</pre>
+<h3>修改链接指向镜像站</h3>
+<p>安装成功后，使用以下命令修改 <code>/etc/yum.repos.d/</code> 目录下以 <code>rpmfusion</code> 开头，以 <code>.repo</code> 结尾的文件：</p>
+<div class="z-wrap"><form class="z-form" onsubmit="return false"></form><pre class="z-code"></pre></div><pre class="z-tmpl" z-lang="bash">
+{{sudo}}sed -e 's!^metalink=!#metalink=!g' \
+         -e 's!^mirrorlist=!#mirrorlist=!g' \
+         -e 's!^#baseurl=!baseurl=!g' \
+         -e 's!https\?://download1\.rpmfusion\.org/!{{endpoint}}/!g' \
+         -i.bak /etc/yum.repos.d/rpmfusion*.repo
+</pre>
+<p>以 Fedora 下的 <code>/etc/yum.repos.d/rpmfusion-free.repo</code> 为例，替换后的文件类似如下：</p>
+<div class="z-wrap"><form class="z-form" onsubmit="return false"></form><pre class="z-code"></pre></div><pre class="z-tmpl" z-lang="ini">
+[rpmfusion-free]
+name=RPM Fusion for Fedora $releasever - Free
+baseurl={{endpoint}}/free/fedora/releases/$releasever/Everything/$basearch/os/
+#metalink=https://mirrors.rpmfusion.org/metalink?repo=free-fedora-$releasever&amp;arch=$basearch
+enabled=1
+metadata_expire=14d
+type=rpm-md
+gpgcheck=1
+repo_gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-$releasever
+
+[rpmfusion-free-debuginfo]
+name=RPM Fusion for Fedora $releasever - Free - Debug
+baseurl={{endpoint}}/free/fedora/releases/$releasever/Everything/$basearch/debug/
+#metalink=https://mirrors.rpmfusion.org/metalink?repo=free-fedora-debug-$releasever&amp;arch=$basearch
+enabled=0
+metadata_expire=7d
+type=rpm-md
+gpgcheck=1
+repo_gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-$releasever
+
+[rpmfusion-free-source]
+name=RPM Fusion for Fedora $releasever - Free - Source
+baseurl={{endpoint}}/free/fedora/releases/$releasever/Everything/source/SRPMS/
+#metalink=https://mirrors.rpmfusion.org/metalink?repo=free-fedora-source-$releasever&amp;arch=$basearch
+enabled=0
+metadata_expire=7d
+type=rpm-md
+gpgcheck=1
+repo_gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-$releasever
+</pre>
+<h3>更多</h3>
+<p>RHEL/CentOS 用户可参考 <a href="http://rpmfusion.org/Configuration">RPMFusion 官方指南</a>。</p><script id="z-config" type="application/x-mirrorz-help">eyJfIjogIlJQTUZ1c2lvbiBcdThmNmZcdTRlZjZcdTRlZDNcdTVlOTMiLCAiYmxvY2siOiBbInJwbWZ1c2lvbiJdLCAiaW5wdXQiOiB7InJlbGVhc2UiOiB7Il8iOiAiXHU1M2QxXHU4ODRjXHU3MjQ4IiwgIm9wdGlvbiI6IHsiOCI6IHsiXyI6ICJDZW50T1MvUkhFTCA4In0sICI5IjogeyJfIjogIkNlbnRPUy9SSEVMIDkifX19fSwgIm5hbWUiOiAicnBtZnVzaW9uIn0=</script>
+</div>
+
+{% endraw %}

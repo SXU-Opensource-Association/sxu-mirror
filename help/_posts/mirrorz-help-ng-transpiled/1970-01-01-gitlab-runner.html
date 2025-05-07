@@ -1,0 +1,66 @@
+---
+category: help
+layout: helpz
+mirrorid: "gitlab-runner"
+excerpt_separator: ""
+---
+
+<!-- 本页面从 tuna/mirrorz-help-ng 自动生成，如需修改请参阅该仓库 -->
+{% raw %}<h1>GitLab Runner 软件仓库</h1>{% endraw %}
+<div class="z-wrap">
+    <form class="z-form z-global">
+        <div>
+            <label for="e0a5cecb">线路选择</label>
+            <select id="e0a5cecb" name="host">
+                <option selected="selected" value="{{ site.url }}">自动</option>
+                <option value="{{ site.urlv4 }}">IPv4</option>
+                <option value="{{ site.urlv6 }}">IPv6</option>
+            </select>
+        </div>
+        <div>
+            <input id="a44d763c" name="_scheme" type="checkbox" checked>
+            <label for="a44d763c">是否使用 HTTPS</label>
+        </div>
+        <div>
+            <input id="a659e7da" name="_sudo" type="checkbox">
+            <label for="a659e7da">是否使用 sudo</label>
+        </div>
+    </form>
+</div>
+{% raw %}
+<div class="z-help">
+<h2>收录范围</h2>
+<p>gitlab-runner 镜像支持 x86-64 和 ARM64(aarch64) 架构。</p>
+<h3>Debian/Ubuntu 用户</h3>
+<p>首先下载 GitLab 的 GPG 公钥：</p>
+<div class="z-wrap"><form class="z-form" onsubmit="return false"></form><pre class="z-code"></pre></div><pre class="z-tmpl" z-lang="bash">
+curl -L https://packages.gitlab.com/runner/gitlab-runner/gpgkey | {{sudo}}gpg --dearmor -o /usr/share/keyrings/gitlab-runner.gpg
+</pre>
+<p>再选择你的 Debian/Ubuntu 版本，将下方内容写入 <code>/etc/apt/sources.list.d/gitlab-runner.list</code></p>
+<div class="z-wrap"><form class="z-form" onsubmit="return false"><div><label for="EuWuKdeH" title="">操作系统版本</label><select id="EuWuKdeH" name="release" title=""><option value="bookworm">Debian 12 (bookworm)</option><option value="bullseye">Debian 11 (bullseye)</option><option value="focal">Ubuntu 20.04 LTS (focal)</option><option value="bionic">Ubuntu 18.04 LTS (bionic)</option><option value="xenial">Ubuntu 16.04 LTS (xenial) (EOL)</option></select></div></form><pre class="z-code"></pre></div><pre class="z-tmpl" z-input="release" z-path="/etc/apt/sources.list.d/gitlab-runner.list">
+deb [signed-by=/usr/share/keyrings/gitlab-runner.gpg] {{endpoint}}/{{os}} {{release}} main
+</pre>
+<p>安装 gitlab-runner:</p>
+<div class="z-wrap"><form class="z-form" onsubmit="return false"></form><pre class="z-code"></pre></div><pre class="z-tmpl" z-lang="bash">
+{{sudo}}apt-get update
+{{sudo}}apt-get install gitlab-runner
+</pre>
+<h3>CentOS/RHEL</h3>
+<p>新建 <code>/etc/yum.repos.d/gitlab-runner.repo</code>，内容为</p>
+<div class="z-wrap"><form class="z-form" onsubmit="return false"></form><pre class="z-code"></pre></div><pre class="z-tmpl" z-lang="ini" z-path="/etc/yum.repos.d/gitlab-runner.repo">
+[gitlab-runner]
+name=gitlab-runner
+baseurl={{endpoint}}/yum/el$releasever-$basearch/
+repo_gpgcheck=0
+gpgcheck=0
+enabled=1
+gpgkey=https://packages.gitlab.com/gpg.key
+</pre>
+<p>再执行</p>
+<div class="z-wrap"><form class="z-form" onsubmit="return false"></form><pre class="z-code"></pre></div><pre class="z-tmpl" z-lang="bash">
+{{sudo}}yum makecache
+{{sudo}}yum install gitlab-runner
+</pre><script id="z-config" type="application/x-mirrorz-help">eyJfIjogIkdpdExhYiBSdW5uZXIgXHU4ZjZmXHU0ZWY2XHU0ZWQzXHU1ZTkzIiwgImJsb2NrIjogWyJjb3ZlciIsICJkZWIiLCAicnBtIl0sICJpbnB1dCI6IHsicmVsZWFzZSI6IHsiXyI6ICJcdTY0Y2RcdTRmNWNcdTdjZmJcdTdlZGZcdTcyNDhcdTY3MmMiLCAib3B0aW9uIjogeyJib29rd29ybSI6IHsiXyI6ICJEZWJpYW4gMTIgKGJvb2t3b3JtKSIsICJvcyI6ICJkZWJpYW4ifSwgImJ1bGxzZXllIjogeyJfIjogIkRlYmlhbiAxMSAoYnVsbHNleWUpIiwgIm9zIjogImRlYmlhbiJ9LCAiZm9jYWwiOiB7Il8iOiAiVWJ1bnR1IDIwLjA0IExUUyAoZm9jYWwpIiwgIm9zIjogInVidW50dSJ9LCAiYmlvbmljIjogeyJfIjogIlVidW50dSAxOC4wNCBMVFMgKGJpb25pYykiLCAib3MiOiAidWJ1bnR1In0sICJ4ZW5pYWwiOiB7Il8iOiAiVWJ1bnR1IDE2LjA0IExUUyAoeGVuaWFsKSAoRU9MKSIsICJvcyI6ICJ1YnVudHUifX19fSwgIm5hbWUiOiAiZ2l0bGFiLXJ1bm5lciJ9</script>
+</div>
+
+{% endraw %}
