@@ -1,1 +1,0 @@
-{"version":3,"file":"moduleGuard-legacy-nEvGxZ2t.js","sources":["../../../_src/entrypoints/moduleGuard.ts"],"sourcesContent":["document.documentElement.setAttribute(\"data-module-loaded\", \"true\");\n"],"names":["document","documentElement","setAttribute"],"mappings":";;;;;;;QAAAA,QAAS,CAAAC,eAAA,CAAgBC,YAAa,CAAA,oBAAA,EAAsB,MAAM,CAAA;;;;"}
