@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="/static/css/rss.css" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>山西大学开源软件镜像站</title>
+    
+    <description>山西大学开源软件镜像站，致力于为国内和校内用户提供高质量的开源软件镜像、Linux 镜像源服务，帮助用户更方便地获取开源软件。本镜像站由山西大学协会负责运行维护。</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Fri, 09 May 2025 10:52:18 +0800</pubDate>
+    <lastBuildDate>Fri, 09 May 2025 10:52:18 +0800</lastBuildDate>
+    <generator>Jekyll v4.3.3</generator>
+    
+      <item>
+        <title>使用清华大学镜像站源代码</title>
+        <description>
+</description>
+        <author>gewala qie</author>
+        <pubDate>Tue, 22 Apr 2025 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/news/%E4%BD%BF%E7%94%A8%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6%E9%95%9C%E5%83%8F%E7%AB%99%E6%BA%90%E4%BB%A3%E7%A0%81/</link>
+        <guid isPermaLink="true">http://localhost:4000/news/%E4%BD%BF%E7%94%A8%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6%E9%95%9C%E5%83%8F%E7%AB%99%E6%BA%90%E4%BB%A3%E7%A0%81/</guid>
+      </item>
+    
+      <item>
+        <title>镜像站启动</title>
+        <description>
+</description>
+        <author>gewala qie</author>
+        <pubDate>Tue, 22 Apr 2025 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/news/hello-mirror/</link>
+        <guid isPermaLink="true">http://localhost:4000/news/hello-mirror/</guid>
+      </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+#mirrors #download-link {
+  margin-bottom: 1em;
+}
+
+.index-issue #footerwrap {
+  background: transparent;
+}
+.index-issue body {
+  background-color: black;
+  color: #dee2e6;
+  --bs-emphasis-color-rgb: white;
+  --bs-link-color: #6ea8fe;
+  --bs-link-color-hover: #8bb9fe;
+  --bs-link-color-rgb: 110, 168, 254;
+  --bs-link-color-hover-rgb: 139, 185, 254;
+}
+
+#upgrade-mask {
+  color: black;
+}
+#upgrade-mask p {
+  color: inherit;
+}

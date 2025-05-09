@@ -1,0 +1,199 @@
+.status-fail[data-v-3956b8a6],
+.status-failed[data-v-3956b8a6],
+.status-paused[data-v-3956b8a6] {
+  --bs-table-bg: #fff4e3;
+  --bs-table-hover-bg: var(--bs-table-bg);
+}
+@media (prefers-color-scheme: dark) {
+.status-fail[data-v-3956b8a6],
+  .status-failed[data-v-3956b8a6],
+  .status-paused[data-v-3956b8a6] {
+    --bs-table-bg: #524841;
+}
+}
+.status-syncing[data-v-3956b8a6] {
+  --bs-table-bg: #e3fffd;
+  --bs-table-hover-bg: var(--bs-table-bg);
+}
+@media (prefers-color-scheme: dark) {
+.status-syncing[data-v-3956b8a6] {
+    --bs-table-bg: #254059;
+}
+}
+table > tbody > tr[data-v-3956b8a6] {
+  border-bottom-width: var(--bs-border-width);
+}
+table > thead > tr[data-v-3956b8a6] {
+  border-bottom-width: calc(var(--bs-border-width) * 2);
+  border-bottom-style: solid;
+  border-bottom-color: currentColor;
+}
+.tuna-roll[data-v-3956b8a6] {
+  position: relative;
+  overflow: hidden;
+}
+.tuna-roll > div[data-v-3956b8a6] {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  animation-timing-function: ease;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  /* Tooltip text */
+}
+.tuna-roll > div > .tooltiptext[data-v-3956b8a6] {
+  visibility: hidden;
+  width: auto;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.tuna-roll > div:hover > .tooltiptext[data-v-3956b8a6] {
+  visibility: visible;
+}
+@keyframes tuna-roll-enter-3956b8a6 {
+0% {
+    transform: translateY(100%);
+}
+100% {
+    transform: none;
+}
+}
+@keyframes tuna-roll-leave-3956b8a6 {
+0% {
+    transform: none;
+}
+100% {
+    transform: translateY(-100%);
+}
+}
+[data-tuna-roll-cur="0"] .tuna-roll > div[data-v-3956b8a6] {
+  animation-name: tuna-roll-leave-3956b8a6;
+  transform: translateY(100%);
+}
+[data-tuna-roll-cur="0"] .tuna-roll > div[data-tuna-roll-seq~="0"][data-v-3956b8a6] {
+  animation-name: tuna-roll-enter-3956b8a6;
+  transform: none;
+}
+[data-tuna-roll-cur="1"] .tuna-roll > div[data-v-3956b8a6] {
+  animation-name: tuna-roll-leave-3956b8a6;
+  transform: translateY(100%);
+}
+[data-tuna-roll-cur="1"] .tuna-roll > div[data-tuna-roll-seq~="1"][data-v-3956b8a6] {
+  animation-name: tuna-roll-enter-3956b8a6;
+  transform: none;
+}
+[data-tuna-roll-cur="2"] .tuna-roll > div[data-v-3956b8a6] {
+  animation-name: tuna-roll-leave-3956b8a6;
+  transform: translateY(100%);
+}
+[data-tuna-roll-cur="2"] .tuna-roll > div[data-tuna-roll-seq~="2"][data-v-3956b8a6] {
+  animation-name: tuna-roll-enter-3956b8a6;
+  transform: none;
+}
+[data-tuna-roll-cur="3"] .tuna-roll > div[data-v-3956b8a6] {
+  animation-name: tuna-roll-leave-3956b8a6;
+  transform: translateY(100%);
+}
+[data-tuna-roll-cur="3"] .tuna-roll > div[data-tuna-roll-seq~="3"][data-v-3956b8a6] {
+  animation-name: tuna-roll-enter-3956b8a6;
+  transform: none;
+}
+[data-tuna-roll-cur="4"] .tuna-roll > div[data-v-3956b8a6] {
+  animation-name: tuna-roll-leave-3956b8a6;
+  transform: translateY(100%);
+}
+[data-tuna-roll-cur="4"] .tuna-roll > div[data-tuna-roll-seq~="4"][data-v-3956b8a6] {
+  animation-name: tuna-roll-enter-3956b8a6;
+  transform: none;
+}
+[data-tuna-roll-cur="5"] .tuna-roll > div[data-v-3956b8a6] {
+  animation-name: tuna-roll-leave-3956b8a6;
+  transform: translateY(100%);
+}
+[data-tuna-roll-cur="5"] .tuna-roll > div[data-tuna-roll-seq~="5"][data-v-3956b8a6] {
+  animation-name: tuna-roll-enter-3956b8a6;
+  transform: none;
+}
+[data-tuna-roll-cur="6"] .tuna-roll > div[data-v-3956b8a6] {
+  animation-name: tuna-roll-leave-3956b8a6;
+  transform: translateY(100%);
+}
+[data-tuna-roll-cur="6"] .tuna-roll > div[data-tuna-roll-seq~="6"][data-v-3956b8a6] {
+  animation-name: tuna-roll-enter-3956b8a6;
+  transform: none;
+}
+.row[data-tuna-roll-freeze="0"] .tuna-roll > div[data-v-3956b8a6] {
+  animation-name: tuna-roll-leave-3956b8a6;
+  transform: translateY(100%);
+}
+.row[data-tuna-roll-freeze="0"] .tuna-roll > div[data-tuna-roll-seq~="0"][data-v-3956b8a6] {
+  animation-name: tuna-roll-enter-3956b8a6;
+  transform: none;
+}
+.row[data-tuna-roll-freeze="1"] .tuna-roll > div[data-v-3956b8a6] {
+  animation-name: tuna-roll-leave-3956b8a6;
+  transform: translateY(100%);
+}
+.row[data-tuna-roll-freeze="1"] .tuna-roll > div[data-tuna-roll-seq~="1"][data-v-3956b8a6] {
+  animation-name: tuna-roll-enter-3956b8a6;
+  transform: none;
+}
+.row[data-tuna-roll-freeze="2"] .tuna-roll > div[data-v-3956b8a6] {
+  animation-name: tuna-roll-leave-3956b8a6;
+  transform: translateY(100%);
+}
+.row[data-tuna-roll-freeze="2"] .tuna-roll > div[data-tuna-roll-seq~="2"][data-v-3956b8a6] {
+  animation-name: tuna-roll-enter-3956b8a6;
+  transform: none;
+}
+.row[data-tuna-roll-freeze="3"] .tuna-roll > div[data-v-3956b8a6] {
+  animation-name: tuna-roll-leave-3956b8a6;
+  transform: translateY(100%);
+}
+.row[data-tuna-roll-freeze="3"] .tuna-roll > div[data-tuna-roll-seq~="3"][data-v-3956b8a6] {
+  animation-name: tuna-roll-enter-3956b8a6;
+  transform: none;
+}
+.row[data-tuna-roll-freeze="4"] .tuna-roll > div[data-v-3956b8a6] {
+  animation-name: tuna-roll-leave-3956b8a6;
+  transform: translateY(100%);
+}
+.row[data-tuna-roll-freeze="4"] .tuna-roll > div[data-tuna-roll-seq~="4"][data-v-3956b8a6] {
+  animation-name: tuna-roll-enter-3956b8a6;
+  transform: none;
+}
+.row[data-tuna-roll-freeze="5"] .tuna-roll > div[data-v-3956b8a6] {
+  animation-name: tuna-roll-leave-3956b8a6;
+  transform: translateY(100%);
+}
+.row[data-tuna-roll-freeze="5"] .tuna-roll > div[data-tuna-roll-seq~="5"][data-v-3956b8a6] {
+  animation-name: tuna-roll-enter-3956b8a6;
+  transform: none;
+}
+.row[data-tuna-roll-freeze="6"] .tuna-roll > div[data-v-3956b8a6] {
+  animation-name: tuna-roll-leave-3956b8a6;
+  transform: translateY(100%);
+}
+.row[data-tuna-roll-freeze="6"] .tuna-roll > div[data-tuna-roll-seq~="6"][data-v-3956b8a6] {
+  animation-name: tuna-roll-enter-3956b8a6;
+  transform: none;
+}
+@media (prefers-reduced-motion) {
+.d-reduce-none[data-v-3956b8a6] {
+    display: none !important;
+}
+}
+@media (prefers-reduced-motion) and (min-width: 992px) {
+.d-lg-reduce-table-cell[data-v-3956b8a6] {
+    display: table-cell !important;
+}
+}

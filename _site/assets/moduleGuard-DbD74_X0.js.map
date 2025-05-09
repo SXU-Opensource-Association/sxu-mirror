@@ -1,0 +1,1 @@
+{"version":3,"file":"moduleGuard-DbD74_X0.js","sources":["../../../_src/entrypoints/moduleGuard.ts"],"sourcesContent":["document.documentElement.setAttribute(\"data-module-loaded\", \"true\");\n"],"names":[],"mappings":"AAAA,SAAA,sBAAA;AAAA,cAAA;AAAA,SAAA,GAAA,EAAA,MAAA,MAAA,CAAA;AAAA,GAAA,mBAAA;AAAA,EAAA,GAAA,EAAA,KAAA;AAAA;AAAA;AAAA,SAAS,gBAAgB,aAAa,sBAAsB,MAAM;"}
